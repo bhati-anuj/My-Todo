@@ -34,7 +34,7 @@ const TodoList = ({ data }) => {
           >
             {text}
           </span>
-          <div style={{display:'flex', justifyContent:'space-between',width:'7%'}}>
+          <div style={{display:'flex', justifyContent:'space-between',width:'8%'}}>
           <FaEdit onClick={() => setEdit(!edit)} />
             
           <MdTaskAlt onClick={() => setCheck(!check)} />
