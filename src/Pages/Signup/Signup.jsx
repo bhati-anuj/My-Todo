@@ -33,7 +33,7 @@ const Signup = () => {
     });
 
     localStorage.setItem("User", JSON.stringify(user))
-    event.target.resset();
+    event.target.reset();
     nav('/');
   }
 

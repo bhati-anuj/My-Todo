@@ -1,5 +1,5 @@
 const userLocalStorage = () => {
-  const user = localStorage.setItem("User");
+  const user = localStorage.getItem("User");
   try {
     if (user) {
       return JSON.parse(user);
