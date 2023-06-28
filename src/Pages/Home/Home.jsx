@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <TodoNav />
-      <a href="/signup">Log out</a>
+      
       <div
         style={{
           // backgroundColor: "#DAFFFB",

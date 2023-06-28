@@ -1,21 +1,35 @@
 import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from "jwt-decode";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef} from "react";
 import { AccountContext } from "../../Context/AccountProvider";
 import { useNavigate } from "react-router-dom";
 import { FormGroup, Form, Button } from "react-bootstrap";
 import userLocalStorage from "../../userLocalStorage";
 
 const Signin = () => {
+
   const userEmailRef = useRef();
   const userPasswordRef = useRef();
 
-  const { setAccount } = useContext(AccountContext);
+  const {  setAccount } = useContext(AccountContext);
   const navigate = useNavigate();
 
   const onLoginSuccess = (res) => {
     const decoded = jwtDecode(res.credential);
     setAccount(decoded);
+    console.log(decoded);
+
+    const user = userLocalStorage();
+
+    user.push({
+      fname : decoded.given_name,
+      lname : decoded.family_name,
+      email: decoded.email,
+      name : decoded.name,
+
+    })
+
+    localStorage.setItem("User", JSON.stringify(user));
     navigate("/home");
   };
 
@@ -33,11 +47,12 @@ const Signin = () => {
     );
 
     if(userObj != undefined){
+      setAccount(userObj);
       navigate("/home");
     }
     else(
       alert("Please registered first")
-      
+       
     )
   }
 
@@ -67,16 +82,19 @@ const Signin = () => {
         >
           <h1 style={{ margin: "25px", marginBottom: "50px" }}>Sign in</h1>
           <h6>Log in with Google</h6>
+          
           <GoogleLogin onSuccess={onLoginSuccess} onError={onLoginError} />
-
+          <br/>
+          <br/>
+          <p >_____________________ OR ________________________</p>
           <FormGroup
             controlId="formGridEmail"
             style={{
-              padding: "15px",
-              paddingTop: "50px",
+              padding: "10px",
+              paddingTop: "35px",
               margin: "10px",
               width: "50%",
-              height: "50%",
+              height: "30%",
             }}
           >
             <Form.Label>Email:</Form.Label>
@@ -96,7 +114,9 @@ const Signin = () => {
           <Button variant="secondary" onClick={handleSubmit}>
             Log in
           </Button>
-          <a href="/signup">Signup</a>
+        <br/>
+          <a>Don't have an account? </a>
+          <a href="/signup">Sign up</a>
         </Form>
       </div>
     </>

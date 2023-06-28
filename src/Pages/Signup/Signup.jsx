@@ -29,6 +29,7 @@ const Signup = () => {
       day: dayRef.current.value,
       month: monthRef.current.value,
       year: yearRef.current.value,
+      name : `${fnameRef.current.value} ${lnameRef.current.value}`,
       
     });
 
@@ -130,7 +131,8 @@ const Signup = () => {
           <Button variant="secondary" type="submit">
             Create Account
           </Button>
-          <a href="/"> Log in</a>
+          <br/>
+          <a>Already have an account? </a><a href="/"> Log in</a>
         </Form>
       </div>
     </>
