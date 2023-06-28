@@ -32,6 +32,7 @@ const Todo = () => {
         style={{
           width: "50%",
           backgroundColor: "#DAFFFB",
+          borderRadius:'8px',
           marginTop: "15px",
           marginBottom: "15px",
           boxShadow: "5px 10px  10px black",

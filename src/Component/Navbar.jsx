@@ -1,8 +1,9 @@
 import { useContext, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
+import { Button } from "react-bootstrap";
 import { AccountContext } from "../Context/AccountProvider";
-
+import logo from "../assets/Color-background.png";
 
 function TodoNav() {
   const {account}  = useContext(AccountContext);
@@ -12,21 +13,24 @@ function TodoNav() {
   return (
     <Navbar
       className="bg-body-tertiary"
-      style={{ backgroundColor: "#176B87", height: "10vh" }}
+      style={{ backgroundColor: "#176B87", height: "20vh" }}
     >
       <Container>
         <Navbar.Brand
           href="/home"
           style={{ color: "#001C30", fontSize: "2.5rem" }}
         >
-          My Todo
+          <img src={logo} alt="Logo" style={{width:'150px',borderRadius:'50%'}}/>
         </Navbar.Brand>
 
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
+          <Navbar.Text style={{color:"white"}}>
             <br/>
-            <h6><a>Signin as: </a>{account.name}</h6>
-            <a href="/signup">Log out</a>
+            <h5>{account.name}</h5>
+            <Button variant="light">
+
+            <a href="/signup" style={{color:"black", textDecoration:'none'}} >Log out</a>
+            </Button>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
