@@ -65,29 +65,33 @@ const Signup = () => {
         >
           <h1>Sign Up</h1>
           <FormGroup
-            controlId="formGridEmail"
+            
             style={{ padding: "15px", margin: "10px" }}
           >
             <Row>
               <Col>
                 <Form.Label>First name:</Form.Label>
-                <Form.Control placeholder="First name" ref={fnameRef} />
+                <Form.Control placeholder="First name"  ref={fnameRef} />
               </Col>
               <Col>
                 <Form.Label>Last name:</Form.Label>
-                <Form.Control placeholder="Last name" ref={lnameRef} />
+                <Form.Control placeholder="Last name"  ref={lnameRef} />
               </Col>
             </Row>
             <Form.Label>Email:</Form.Label>
             <Form.Control
               type="email"
+              
+
               placeholder="Enter your email "
               ref={emailRef}
+              
             />
 
             <Form.Label>Phone:</Form.Label>
             <Form.Control
               type="number"
+              
               placeholder="Enter your phone number"
               ref={phoneRef}
             />
@@ -95,6 +99,7 @@ const Signup = () => {
             <Form.Label>Password:</Form.Label>
             <Form.Control
               type="password"
+              
               placeholder="Create your password"
               ref={passwordRef}
             />
@@ -102,11 +107,11 @@ const Signup = () => {
             <Row className="mb-3">
               <Form.Label>DOB:</Form.Label>
               <Form.Group as={Col} controlId="formGridCity">
-                <Form.Control type="number" placeholder="Day" ref={dayRef} />
+                <Form.Control type="number"  placeholder="Day" ref={dayRef} />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridState">
-                <Form.Select defaultValue="Month" ref={monthRef}>
+                <Form.Select defaultValue="Month"   ref={monthRef}>
                   <option>Month</option>
                   <option>January</option>
                   <option>February</option>
@@ -124,7 +129,7 @@ const Signup = () => {
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridZip">
-                <Form.Control type="number" placeholder="Year" ref={yearRef} />
+                <Form.Control type="number" placeholder="Year"  ref={yearRef} />
               </Form.Group>
             </Row>
           </FormGroup>

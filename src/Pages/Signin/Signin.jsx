@@ -17,7 +17,7 @@ const Signin = () => {
   const onLoginSuccess = (res) => {
     const decoded = jwtDecode(res.credential);
     setAccount(decoded);
-    console.log(decoded);
+   
 
     const user = userLocalStorage();
 
@@ -88,7 +88,7 @@ const Signin = () => {
           <br/>
           <p >_____________________ OR ________________________</p>
           <FormGroup
-            controlId="formGridEmail"
+           
             style={{
               padding: "10px",
               paddingTop: "35px",
@@ -117,6 +117,7 @@ const Signin = () => {
         <br/>
           <a>Don't have an account? </a>
           <a href="/signup">Sign up</a>
+          
         </Form>
       </div>
     </>
