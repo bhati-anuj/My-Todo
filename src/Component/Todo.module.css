@@ -1,0 +1,23 @@
+.todoContainer {
+  width: 50%;
+  background-color: #dafffb;
+  border-radius: 8px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 5px 10px 10px black;
+}
+
+.todoTitle{
+    margin: 20px;
+    font-family : Courgette, cursive;
+    font-weight: 700;
+}
+
+@media (max-width: 650px){
+    .todoContainer{
+        width: 90%;
+    }
+    .todoTitle{
+        text-align: center;
+    }
+}

@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, FormGroup, Row, Col, Button } from "react-bootstrap";
 import userLocalStorage from "../../userLocalStorage";
 import { Link, useNavigate } from "react-router-dom";
+import style from "../Signup/Signup.module.css";
 
 const Signup = () => {
   const fnameRef = useRef();
@@ -12,7 +13,7 @@ const Signup = () => {
   const dayRef = useRef();
   const monthRef = useRef();
   const yearRef = useRef();
-   
+
   const nav = useNavigate();
 
   function handleSubmit(event) {
@@ -29,69 +30,40 @@ const Signup = () => {
       day: dayRef.current.value,
       month: monthRef.current.value,
       year: yearRef.current.value,
-      name : `${fnameRef.current.value} ${lnameRef.current.value}`,
-      
+      name: `${fnameRef.current.value} ${lnameRef.current.value}`,
     });
 
-    localStorage.setItem("User", JSON.stringify(user))
+    localStorage.setItem("User", JSON.stringify(user));
     event.target.reset();
-    nav('/');
+    nav("/");
   }
 
   return (
     <>
-      <div
-        style={{
-          height: "100vh",
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-          backgroundColor: "#64CCC5",
-        }}
-      >
-        <Form
-          onSubmit={handleSubmit}
-          style={{
-            width: "50%",
-            padding: "15px",
-            margin: "15px",
-            backgroundColor: "#DAFFFB",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            boxShadow: "5px 10px  10px black",
-          }}
-        >
+      <div className={style.signupContainer}>
+        <Form onSubmit={handleSubmit} className={style.signupForm}>
           <h1>Sign Up</h1>
-          <FormGroup
-            
-            style={{ padding: "15px", margin: "10px" }}
-          >
+          <FormGroup style={{ padding: "15px", margin: "10px" }}>
             <Row>
               <Col>
                 <Form.Label>First name:</Form.Label>
-                <Form.Control placeholder="First name"  ref={fnameRef} />
+                <Form.Control placeholder="First name" ref={fnameRef} />
               </Col>
               <Col>
                 <Form.Label>Last name:</Form.Label>
-                <Form.Control placeholder="Last name"  ref={lnameRef} />
+                <Form.Control placeholder="Last name" ref={lnameRef} />
               </Col>
             </Row>
             <Form.Label>Email:</Form.Label>
             <Form.Control
               type="email"
-              
-
               placeholder="Enter your email "
               ref={emailRef}
-              
             />
 
             <Form.Label>Phone:</Form.Label>
             <Form.Control
               type="number"
-              
               placeholder="Enter your phone number"
               ref={phoneRef}
             />
@@ -99,7 +71,6 @@ const Signup = () => {
             <Form.Label>Password:</Form.Label>
             <Form.Control
               type="password"
-              
               placeholder="Create your password"
               ref={passwordRef}
             />
@@ -107,11 +78,11 @@ const Signup = () => {
             <Row className="mb-3">
               <Form.Label>DOB:</Form.Label>
               <Form.Group as={Col} controlId="formGridCity">
-                <Form.Control type="number"  placeholder="Day" ref={dayRef} />
+                <Form.Control type="number" placeholder="Day" ref={dayRef} />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridState">
-                <Form.Select defaultValue="Month"   ref={monthRef}>
+                <Form.Select defaultValue="Month" ref={monthRef}>
                   <option>Month</option>
                   <option>January</option>
                   <option>February</option>
@@ -129,16 +100,16 @@ const Signup = () => {
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridZip">
-                <Form.Control type="number" placeholder="Year"  ref={yearRef} />
+                <Form.Control type="number" placeholder="Year" ref={yearRef} />
               </Form.Group>
             </Row>
           </FormGroup>
           <Button variant="secondary" type="submit">
             Create Account
           </Button>
-          <br/>
+          <br />
           <a>Already have an account? </a>
-          <Link to={"/"} >Sign in </Link>
+          <Link to={"/"}>Sign in </Link>
         </Form>
       </div>
     </>

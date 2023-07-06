@@ -3,21 +3,15 @@ import { Container, InputGroup, Form } from "react-bootstrap";
 import { MdTaskAlt, MdDownloadDone } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 
-const TodoList = ({data}) => {
+const TodoList = ({ data }) => {
   const [check, setCheck] = useState(false);
   const [edit, setEdit] = useState(false);
   const [text, setText] = useState(data);
 
-  
   const handleEdit = () => {
     data = text;
- 
-    console.log(text);
- 
     setEdit(false);
   };
-
-  
 
   return (
     <Container style={{ display: "flex", width: "100%" }}>
@@ -52,9 +46,15 @@ const TodoList = ({data}) => {
               width: "8%",
             }}
           >
-            <FaEdit onClick={() => setEdit(!edit)} />
+            <FaEdit
+              onClick={() => setEdit(!edit)}
+              style={{ fontSize: "20px" }}
+            />
 
-            <MdTaskAlt onClick={() => setCheck(!check)} />
+            <MdTaskAlt
+              onClick={() => setCheck(!check)}
+              style={{ fontSize: "20px" }}
+            />
           </div>
         </>
       )}

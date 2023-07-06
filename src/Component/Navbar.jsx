@@ -18,16 +18,16 @@ function TodoNav() {
     >
       <Container>
         <Navbar.Brand
-          href="/"
+          href="/home"
           style={{ color: "#001C30", fontSize: "2.5rem" }}
         >
-          <img src={logo} alt="Logo" style={{width:'150px',borderRadius:'50%'}}/>
+          <img src={logo} alt="Logo" style={{width:'6rem',borderRadius:'50%'}}/>
         </Navbar.Brand>
 
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text style={{color:"white"}}>
+          <Navbar.Text style={{color:"white",width:"10rem"}}>
             <br/>
-            <h5>{account.name}</h5>
+            <h6>{account.name}</h6>
             <Button variant="light">
             <Link to={"/"} style={{color:"black", textDecoration:'none'}}>Log out</Link>
             
