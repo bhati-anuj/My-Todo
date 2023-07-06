@@ -29,7 +29,7 @@ function TodoNav() {
             <br/>
             <h5>{account.name}</h5>
             <Button variant="light">
-            <Link to={"/Signin"} style={{color:"black", textDecoration:'none'}}>Log out</Link>
+            <Link to={"/"} style={{color:"black", textDecoration:'none'}}>Log out</Link>
             
             </Button>
           </Navbar.Text>

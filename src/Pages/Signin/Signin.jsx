@@ -30,7 +30,7 @@ const Signin = () => {
     })
 
     localStorage.setItem("User", JSON.stringify(user));
-    navigate("/");
+    navigate("/home");
   };
 
   const onLoginError = (res) => {
@@ -48,7 +48,7 @@ const Signin = () => {
 
     if(userObj != undefined){
       setAccount(userObj);
-      navigate("/");
+      navigate("/home");
     }
     else(
       alert("Please registered first")
