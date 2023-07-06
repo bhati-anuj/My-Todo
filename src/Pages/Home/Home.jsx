@@ -10,7 +10,6 @@ const Home = () => {
       
       <div
         style={{
-          // backgroundColor: "#DAFFFB",
           backgroundColor: "#64CCC5",
           display: "flex",
           justifyContent: "center",

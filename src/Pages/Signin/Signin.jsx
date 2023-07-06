@@ -2,7 +2,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from "jwt-decode";
 import React, { useContext, useRef} from "react";
 import { AccountContext } from "../../Context/AccountProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FormGroup, Form, Button } from "react-bootstrap";
 import userLocalStorage from "../../userLocalStorage";
 
@@ -30,7 +30,7 @@ const Signin = () => {
     })
 
     localStorage.setItem("User", JSON.stringify(user));
-    navigate("/home");
+    navigate("/");
   };
 
   const onLoginError = (res) => {
@@ -48,7 +48,7 @@ const Signin = () => {
 
     if(userObj != undefined){
       setAccount(userObj);
-      navigate("/home");
+      navigate("/");
     }
     else(
       alert("Please registered first")
@@ -116,7 +116,8 @@ const Signin = () => {
           </Button>
         <br/>
           <a>Don't have an account? </a>
-          <a href="/signup">Sign up</a>
+          <Link to={"/Signup"}>Sign up</Link>
+         
           
         </Form>
       </div>

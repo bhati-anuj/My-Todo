@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Form, FormGroup, Row, Col, Button } from "react-bootstrap";
 import userLocalStorage from "../../userLocalStorage";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const fnameRef = useRef();
@@ -137,7 +137,8 @@ const Signup = () => {
             Create Account
           </Button>
           <br/>
-          <a>Already have an account? </a><a href="/"> Log in</a>
+          <a>Already have an account? </a>
+          <Link to={"/Signin"} >Sign in </Link>
         </Form>
       </div>
     </>

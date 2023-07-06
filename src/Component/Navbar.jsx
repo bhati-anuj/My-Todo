@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Button } from "react-bootstrap";
 import { AccountContext } from "../Context/AccountProvider";
 import logo from "../assets/Color-background.png";
+import { Link } from "react-router-dom";
 
 function TodoNav() {
   const {account}  = useContext(AccountContext);
@@ -17,7 +18,7 @@ function TodoNav() {
     >
       <Container>
         <Navbar.Brand
-          href="/home"
+          href="/"
           style={{ color: "#001C30", fontSize: "2.5rem" }}
         >
           <img src={logo} alt="Logo" style={{width:'150px',borderRadius:'50%'}}/>
@@ -28,8 +29,8 @@ function TodoNav() {
             <br/>
             <h5>{account.name}</h5>
             <Button variant="light">
-
-            <a href="/signup" style={{color:"black", textDecoration:'none'}} >Log out</a>
+            <Link to={"/Signin"} style={{color:"black", textDecoration:'none'}}>Log out</Link>
+            
             </Button>
           </Navbar.Text>
         </Navbar.Collapse>
